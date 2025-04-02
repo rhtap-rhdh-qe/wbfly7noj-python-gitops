@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: wbfly7noj-python-gitops
+  description: This is GitOps manifest for wbfly7noj-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=wbfly7noj-python
+    backstage.io/kubernetes-id: wbfly7noj-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: wbfly7noj-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:wbfly7noj-python
